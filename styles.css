@@ -110,12 +110,22 @@ nav a:hover {
   margin-bottom: 18px;
 }
 
+/* Services list */
+.services {
+  list-style: none;
+  padding-left: 0;
+}
+
 .services li {
+  text-align: center;
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
 
-/* Reviews Carousel - Endless Horizontal Scroll */
+/* ------------------------------------------- */
+/*  REVIEWS — PERFECT ENDLESS LOOP CAROUSEL    */
+/* ------------------------------------------- */
+
 .review-container {
   overflow: hidden;
   width: 100%;
@@ -123,16 +133,19 @@ nav a:hover {
   white-space: nowrap;
 }
 
+/* The track that moves left */
 .review-track {
   display: inline-flex;
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 28s linear infinite;
+  will-change: transform;
 }
 
+/* Each review card */
 .review {
   display: inline-block;
-  margin-right: 4rem;
+  margin-right: 3rem;
   background: #18181b;
-  padding: 24px;
+  padding: 22px 26px;
   border-radius: 12px;
   border: 1px solid #2e2e33;
   color: #d4d4d8;
@@ -147,7 +160,31 @@ nav a:hover {
   100% { transform: translateX(-50%); }
 }
 
-/* Scroll animations */
+/* Premium fade edges */
+.review-container::before,
+.review-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.review-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0d0d0f 0%, transparent 100%);
+}
+
+.review-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0d0d0f 0%, transparent 100%);
+}
+
+/* ------------------------------------------- */
+/*  SCROLL REVEAL ANIMATIONS                   */
+/* ------------------------------------------- */
 .fade-in {
   animation: fadeIn 1.4s ease forwards;
   opacity: 0;
@@ -189,8 +226,11 @@ nav a:hover {
   margin-top: 40px;
 }
 
-/* Mobile */
+/* ------------------------------------------- */
+/*  MOBILE                                    */
+/* ------------------------------------------- */
 @media (max-width: 768px) {
+
   .hero {
     padding: 80px 20px;
     height: 75vh;
@@ -208,48 +248,18 @@ nav a:hover {
     padding: 80px 25px;
   }
 
+  /* Faster movement but smaller spacing */
+  .review-track {
+    animation-duration: 20s;
+  }
+
   .review {
-    min-width: 85%;
+    min-width: 75%;
+    margin-right: 2rem;
   }
 
   nav a {
     margin-left: 14px;
     font-size: 0.92rem;
   }
-}
-/* Fade edges for premium effect */
-.review-container {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Left fade */
-.review-container::before,
-.review-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 120px;
-  height: 100%;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.review-container::before {
-  left: 0;
-  background: linear-gradient(to right, #0d0d0f 0%, transparent 100%);
-}
-
-.review-container::after {
-  right: 0;
-  background: linear-gradient(to left, #0d0d0f 0%, transparent 100%);
-}
-
-.services {
-  list-style: none;
-  padding-left: 0;
-}
-
-.services li {
-  text-align: center;
 }
