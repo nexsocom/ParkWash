@@ -302,3 +302,10 @@ h3.tier-title {
   50%  { text-shadow: 0 0 10px #E5E4E2, 0 0 20px #E5E4E2; }
   100% { text-shadow: 0 0 5px #E5E4E2, 0 0 10px #E5E4E2; }
 }
+
+h3.divider {
+  padding-bottom: 6px;               /* space between text and line */
+  margin-bottom: 15px;               /* space under the line */
+  border-bottom: 2px solid #ccc;     /* the actual line */
+  display: inline-block;             /* makes the line only as wide as the text */
+}
