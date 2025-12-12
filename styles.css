@@ -264,44 +264,53 @@ nav a:hover {
   }
 }
 
+/* Space between list items */
+ul.services li {
+  margin: 8px 0;
+}
+
 /* General spacing between tiers */
 h3.tier-title {
   margin-top: 40px;
   margin-bottom: 15px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  display: inline-block;  /* shrink to fit text */
+  display: inline-block;
   font-size: 1.5rem;
-  color: #fff;
-}
-
-/* SILVER box */
-.tier-silver {
-  background-color: #C0C0C0;
-}
-
-/* GOLD box */
-.tier-gold {
-  background-color: #D4AF37;
-}
-
-/* PLATINUM glow effect only on the title */
-.tier-platinum {
-  background: none;
-  color: #E5E4E2;
   font-weight: 700;
   position: relative;
-  animation: glow-text 2s ease-in-out infinite;
 }
 
-/* Glow animation for text only */
-@keyframes glow-text {
+/* SILVER glow (black/dark subtle) */
+.tier-silver {
+  color: #333;
+  animation: glow-silver 2.5s ease-in-out infinite;
+}
+
+@keyframes glow-silver {
+  0%   { text-shadow: 0 0 2px #000, 0 0 4px #111; }
+  50%  { text-shadow: 0 0 4px #000, 0 0 8px #222; }
+  100% { text-shadow: 0 0 2px #000, 0 0 4px #111; }
+}
+
+/* GOLD glow (gold dimmed) */
+.tier-gold {
+  color: #D4AF37;
+  animation: glow-gold 2.5s ease-in-out infinite;
+}
+
+@keyframes glow-gold {
+  0%   { text-shadow: 0 0 2px #D4AF37, 0 0 4px #D4AF37; }
+  50%  { text-shadow: 0 0 4px #D4AF37, 0 0 8px #D4AF37; }
+  100% { text-shadow: 0 0 2px #D4AF37, 0 0 4px #D4AF37; }
+}
+
+/* PLATINUM glow (white/light metallic) */
+.tier-platinum {
+  color: #E5E4E2;
+  animation: glow-platinum 2.5s ease-in-out infinite;
+}
+
+@keyframes glow-platinum {
   0%   { text-shadow: 0 0 5px #E5E4E2, 0 0 10px #E5E4E2; }
   50%  { text-shadow: 0 0 10px #E5E4E2, 0 0 20px #E5E4E2; }
   100% { text-shadow: 0 0 5px #E5E4E2, 0 0 10px #E5E4E2; }
-}
-
-/* Optional: add spacing between the list items for readability */
-ul.services li {
-  margin: 8px 0;
 }
