@@ -263,3 +263,65 @@ nav a:hover {
     font-size: 0.92rem;
   }
 }
+
+/* BASIC */
+.services.basic li {
+  border-left: 4px solid #cccccc;
+  padding-left: 10px;
+}
+
+/* SILVER */
+.services.silver li {
+  border-left: 4px solid #C0C0C0;
+  padding-left: 10px;
+}
+
+/* GOLD */
+.services.gold li {
+  border-left: 4px solid #D4AF37;
+  padding-left: 10px;
+}
+
+/* PLATINUM */
+.services.platinum li {
+  border-left: 4px solid #E5E4E2;
+  padding-left: 10px;
+  font-weight: 600;          /* makes it feel premium */
+}
+
+.services.platinum {
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { background-color: rgba(229, 228, 226, 0.1); }
+  50% { background-color: rgba(229, 228, 226, 0.25); }
+  100% { background-color: rgba(229, 228, 226, 0.1); }
+}
+
+.tier-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Silver */
+.tier-label-silver {
+  background: #C0C0C0;
+  color: #222;
+}
+
+/* Gold */
+.tier-label-gold {
+  background: #D4AF37;
+  color: #222;
+}
+
+/* Platinum */
+.tier-label-platinum {
+  background: #E5E4E2;
+  color: #111;
+}
+
