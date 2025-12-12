@@ -291,18 +291,6 @@ h3.tier-title {
   100% { text-shadow: 0 0 2px #000, 0 0 4px #111; }
 }
 
-/* GOLD glow (gold dimmed) */
-.tier-gold {
-  color: #D4AF37;
-  animation: glow-gold 2.5s ease-in-out infinite;
-}
-
-@keyframes glow-gold {
-  0%   { text-shadow: 0 0 2px #D4AF37, 0 0 4px #D4AF37; }
-  50%  { text-shadow: 0 0 4px #D4AF37, 0 0 8px #D4AF37; }
-  100% { text-shadow: 0 0 2px #D4AF37, 0 0 4px #D4AF37; }
-}
-
 /* PLATINUM glow (white/light metallic) */
 .tier-platinum {
   color: #E5E4E2;
