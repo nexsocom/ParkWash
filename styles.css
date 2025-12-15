@@ -309,3 +309,18 @@ h3.divider {
   border-bottom: 2px solid #ccc;     /* the actual line */
   display: inline-block;             /* makes the line only as wide as the text */
 }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  max-width: 1000px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+}
