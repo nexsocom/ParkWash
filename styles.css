@@ -123,66 +123,6 @@ nav a:hover {
 }
 
 /* ------------------------------------------- */
-/*  REVIEWS — PERFECT ENDLESS LOOP CAROUSEL    */
-/* ------------------------------------------- */
-
-.review-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  white-space: nowrap;
-}
-
-/* The track that moves left */
-.review-track {
-  display: inline-flex;
-  animation: scroll-left 28s linear infinite;
-  will-change: transform;
-}
-
-/* Each review card */
-.review {
-  display: inline-block;
-  margin-right: 3rem;
-  background: #18181b;
-  padding: 22px 26px;
-  border-radius: 12px;
-  border: 1px solid #2e2e33;
-  color: #d4d4d8;
-  font-size: 1.05rem;
-  line-height: 1.55;
-  white-space: nowrap;
-}
-
-/* Infinite scroll animation */
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Premium fade edges */
-.review-container::before,
-.review-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.review-container::before {
-  left: 0;
-  background: linear-gradient(to right, #0d0d0f 0%, transparent 100%);
-}
-
-.review-container::after {
-  right: 0;
-  background: linear-gradient(to left, #0d0d0f 0%, transparent 100%);
-}
-
-/* ------------------------------------------- */
 /*  SCROLL REVEAL ANIMATIONS                   */
 /* ------------------------------------------- */
 .fade-in {
@@ -249,14 +189,6 @@ nav a:hover {
   }
 
   /* Faster movement but smaller spacing */
-  .review-track {
-    animation-duration: 20s;
-  }
-
-  .review {
-    min-width: 75%;
-    margin-right: 2rem;
-  }
 
   nav a {
     margin-left: 14px;
@@ -339,4 +271,83 @@ h3.divider {
   max-width: 500px;
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ------------------------------------------- */
+/*  REVIEW CARDS — CLICK SLIDER                */
+/* ------------------------------------------- */
+
+.reviews-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.reviews-viewport {
+  overflow: hidden;
+  width: 100%;
+  max-width: 820px;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+}
+
+/* Card (taller, premium feel) */
+.review-card {
+  min-width: 260px;
+  max-width: 260px;
+  background: #18181b;
+  border-radius: 18px;
+  padding: 26px 22px 30px;
+  border: 1px solid #2e2e33;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 18px 0 20px;
+  color: #d4d4d8;
+}
+
+.review-card span {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+/* Stars */
+.stars {
+  color: #f5c451;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+/* Navigation arrows */
+.review-nav {
+  background: #ffffff10;
+  border: 1px solid #ffffff25;
+  color: #fff;
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.review-nav:hover {
+  background: #ffffff20;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .reviews-viewport {
+    max-width: 280px;
+  }
 }
