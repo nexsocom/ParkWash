@@ -94,3 +94,22 @@ prevBtn.addEventListener('click', () => {
   index = Math.max(0, index - 1);
   track.style.transform = `translateX(-${index * cardWidth}px)`;
 });
+
+<script>
+const slider = document.getElementById('reviewsScroll');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].pageX;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchmove', (e) => {
+  const x = e.touches[0].pageX;
+  const walk = (startX - x);
+  slider.scrollLeft = scrollLeft + walk;
+});
+</script>
