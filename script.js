@@ -77,3 +77,20 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     underline.style.width = "0%";
   });
 });
+
+const track = document.querySelector('.reviews-track');
+const nextBtn = document.querySelector('.review-nav.next');
+const prevBtn = document.querySelector('.review-nav.prev');
+
+let index = 0;
+const cardWidth = 284; // card + gap
+
+nextBtn.addEventListener('click', () => {
+  index++;
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+});
+
+prevBtn.addEventListener('click', () => {
+  index = Math.max(0, index - 1);
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+});
