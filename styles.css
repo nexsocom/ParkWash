@@ -351,3 +351,28 @@ h3.divider {
     max-width: 280px;
   }
 }
+
+/* Mobile swipe layout */
+.reviews-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.review-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  background: #18181b;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #2e2e33;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Hide scrollbar */
+.reviews-scroll::-webkit-scrollbar {
+  display: none;
+}
